@@ -1,6 +1,6 @@
 export class StorageWrapper {
   store: any;
-  isSupported: any;
+  isSupported: boolean;
 
   constructor(type: string) {
     this.store = window[`${type}Storage`];
