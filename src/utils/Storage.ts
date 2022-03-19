@@ -7,15 +7,15 @@ export class StorageWrapper {
     this.isSupported = typeof Storage === "function";
   }
 
-  set(key, value): void {
+  set(key: string, value: object): void {
     this.store.setItem(key, JSON.stringify(value));
   }
 
-  get(key): object {
+  get(key: string): object {
     return JSON.parse(this.store.getItem(key));
   }
 
-  remove(key): void {
+  remove(key: string): void {
     this.store.removeItem(key);
   }
 
