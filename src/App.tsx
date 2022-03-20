@@ -18,15 +18,17 @@ function App() {
     window.addEventListener("hashchange", handleHashChange);
   }, []);
 
+  const routes = {
+    "": <Home />,
+    "#home": <Home />,
+    "#about": <About />,
+    "#contact": <Contact />,
+  };
+
   return (
     <>
       <Header />
-      <main>
-        {hash === "" && <Home />}
-        {hash === "#home" && <Home />}
-        {hash === "#about" && <About />}
-        {hash === "#contact" && <Contact />}
-      </main>
+      <main>{routes[hash]}</main>
     </>
   );
 }
